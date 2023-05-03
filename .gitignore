@@ -21,3 +21,6 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+
+# 忽略项目中任何地方的node_modules文件夹
+*node_modules/*

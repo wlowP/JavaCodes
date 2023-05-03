@@ -1,4 +1,4 @@
-package wlow02._5_SocketNet;
+package wlow02._5_SocketNetwork;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -26,7 +26,7 @@ public class _1_2_DatagramSocketReceive {
         InetAddress address = dp.getAddress(); // 获取到发送方的IP信息
         int port = dp.getPort(); // 📌📌获取到发送方发送时的端口号, 不是接收到数据的端口号
 
-        System.out.println("接收到数据: " + new String(data));
+        System.out.println("接收到数据: " + new String(data, 0, len));
         System.out.println("数据长度: " + len);
         System.out.println("是从 " + address + " 这台电脑的 " + port + " 端口发过来的");
 

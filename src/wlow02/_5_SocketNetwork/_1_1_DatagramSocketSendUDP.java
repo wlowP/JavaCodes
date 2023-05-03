@@ -1,4 +1,4 @@
-package wlow02._5_SocketNet;
+package wlow02._5_SocketNetwork;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -6,7 +6,7 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 // 以UDP协议发送数据
-public class _1_1_DatagramSocketSend {
+public class _1_1_DatagramSocketSendUDP {
     public static void main(String[] args) throws IOException {
         /*
         * 1.创建DatagramSocket对象, 用来发送数据的

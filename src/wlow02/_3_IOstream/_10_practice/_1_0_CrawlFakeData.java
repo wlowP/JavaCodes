@@ -24,7 +24,7 @@ public class _1_0_CrawlFakeData {
         ArrayList<String> lnRaw = filter(webCrawler(lastNamesURL), ".{4}(?=[，。])", 0);
         ArrayList<String> boyNamesRaw = filter(webCrawler(boyNamesURL), "[一-龥]{2}(?=、|。)", 0);
         // 📌📌当目标中格式相似的字符串太多时, 可以扩大格式搜索范围.
-        // 比如查找aa bb cc dd , 用regex: ..{2}, 但是这个匹配范围太广了, 应该更独特--> ..{2}( ..{2}){3}
+        // 比如查找aa bb cc dd , 用regex: .., 但是这个匹配范围太广了, 应该更独特--> ..( ..){3}
         ArrayList<String> girlNamesRaw = filter(webCrawler(girlNamesURL), "..( ..){4}", 0);
 
         // 处理获得的初始数据
@@ -44,7 +44,7 @@ public class _1_0_CrawlFakeData {
 
         // 写入处理好的数据到txt文件中. 格式: 姓名-性别-年龄
         PrintWriter pw = new PrintWriter(new FileWriter("IOPractice/crawledData/data.txt"));
-        ArrayList<String> info = createInfo(lastNames, boyNames, girlNames, 15, 15);
+        ArrayList<String> info = createInfo(lastNames, boyNames, girlNames, 50, 50);
         for (String s : info) {
             pw.println(s);
         }
@@ -68,7 +68,6 @@ public class _1_0_CrawlFakeData {
     public static ArrayList<String> filter(String raw, String regex, int group) {
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(raw);
-        StringBuilder sb = new StringBuilder();
         ArrayList<String> list = new ArrayList<>();
         while (m.find()) {
             list.add(m.group(group));

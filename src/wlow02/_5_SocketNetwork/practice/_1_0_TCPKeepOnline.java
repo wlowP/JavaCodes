@@ -12,7 +12,7 @@ import java.util.concurrent.Executors;
 // TCP传输之多发多收
 // 接收消息的服务端(聊天室)
 public class _1_0_TCPKeepOnline {
-    static ExecutorService threadPoolUnlimited = Executors.newCachedThreadPool();
+    private static final ExecutorService threadPoolUnlimited = Executors.newCachedThreadPool();
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = new ServerSocket(9090);
         Socket link;
@@ -25,9 +25,9 @@ public class _1_0_TCPKeepOnline {
             // new Thread(new Receiver(link)).start();
         }
     }
-    // 监听客户端的Runnable实现类
+    // 监听客户端的Runnable实现类. 一个客户端用户对应一条线程
     static class Receiver implements Runnable{
-        private Socket link;
+        private final Socket link;
         // 构造方法传递客户端的Socket连接对象
         public Receiver(Socket link){
             this.link = link;
@@ -42,12 +42,17 @@ public class _1_0_TCPKeepOnline {
                 br = new BufferedReader(new InputStreamReader(link.getInputStream()));
                 addr = link.getInetAddress();
                 ps = new PrintStream(link.getOutputStream());
+                System.out.println("<system> " + addr.getHostAddress() + ":" + link.getPort() + " 进入了聊天室");
                 while ((msgLine = br.readLine()) != null){
                     System.out.print(addr.getHostAddress() + ":" + link.getPort() + " > ");
                     System.out.println(msgLine);
+                    // 服务端做出响应
                     ps.println("您发送的内容: " + msgLine);
-                    ps.flush();
                 }
+                // 跳出循环, 说明客户端结束聊天了
+                System.out.println("<system> " + addr.getHostAddress() + ":" + link.getPort() + " 退出了聊天室");
+                ps.close();
+                link.close();
             }catch (IOException e){
                 System.err.println("eee");
             }
@@ -58,7 +63,7 @@ public class _1_0_TCPKeepOnline {
 // 客户端, 发送信息, 可开多个实例
 class ClientOnline{
     public static void main(String[] args) throws IOException {
-        Socket client = null;
+        Socket client;
         try {
             client = new Socket("localhost", 9090);
         } catch (IOException e) {
@@ -72,16 +77,16 @@ class ClientOnline{
         String msg;
         while (true){
             msg = sc.nextLine();
-            if ("886".equals(msg)) {
+            // 输入/exit结束聊天
+            if ("/exit".equals(msg)) {
                 System.out.println("结束聊天...");
                 break;
             }
+            // 这里一定得用println, 不然服务端那边的readLine就不知道什么时候读取完一行了
             ps.println(msg);
-            ps.flush();
             // 📌📌服务端只用反馈一次消息, 不用while(true)跟服务端聊天了, 不然会卡住
             System.out.println("server > " + br.readLine());
         }
-        ps.close();
         client.close();
     }
 }

@@ -54,7 +54,7 @@ public class _1_0_TCPKeepOnline {
                 ps.close();
                 link.close();
             }catch (IOException e){
-                System.err.println("eee");
+                System.err.println("exception");
             }
         }
     }

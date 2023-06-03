@@ -6,15 +6,15 @@ public class Test {
         // 通过代理来访问对象的步骤:
         Someone so = new Someone("Reisen");
 
-        // 1. 先获取到代理的对象
+        // 🔖1. 先获取到代理的对象
         MyProxy proxy = ProxyUtil.createProxy(so);
 
-        // 2. 然后通过代理对象来调用方法
+        // 🔖2. 然后通过代理对象来调用方法
         String res = proxy.eat("胡萝卜");
         System.out.println(res);
         proxy.play("東方紺珠伝　～ Legacy of Lunatic Kingdom.");
 
-        // 📌📌用到别的接口的代理方法时得先强转.
+        // 📌📌注意这个代理是属于MyProxy类型的, 用到别的接口的代理方法时得先强转.
         ((Activities)proxy).activity("出门采药");
     }
 }

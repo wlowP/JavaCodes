@@ -1,0 +1,3 @@
+2023-06-03 23:11:17.100 [main] INFO  wlow02._7_Proxy._2_Logger._1_0_Basic - 这是一条日志
+2023-06-03 23:11:17.101 [main] WARN  wlow02._7_Proxy._2_Logger._1_0_Basic - 警告
+2023-06-03 23:11:17.101 [main] ERROR wlow02._7_Proxy._2_Logger._1_0_Basic - 错误

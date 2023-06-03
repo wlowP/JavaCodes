@@ -1,0 +1,27 @@
+{
+	name=王德发
+	age=19
+	gender=男
+}
+{
+	name=韩大狗
+	age=18
+	gender=男
+}
+{
+	name=翠花
+	age=19
+	gender=女
+}
+{
+	name=小明
+	num=202300001
+	age=18
+	email=xiaoming@123.com
+}
+{
+	name=小红
+	num=202300002
+	age=19
+	email=xh@123456.com
+}

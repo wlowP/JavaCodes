@@ -1,10 +1,9 @@
-package wlow02._7_Proxy._2_Logger;
+package wlow02._8_JVM._1_Logger;
 
 // Java也有自带的logger: java.util.logging.Logger 别导错包了
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Scanner;
 
 // 日志的基本使用
 public class _1_0_Basic {

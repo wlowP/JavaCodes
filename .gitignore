@@ -2,6 +2,7 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 /.idea/
+/.vscode/*
 
 # File-based project format
 *.iws
@@ -23,4 +24,4 @@ crashlytics-build.properties
 fabric.properties
 
 # 忽略项目中任何地方的node_modules文件夹
-*node_modules/*
+node_modules/

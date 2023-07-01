@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 📌xmlns=... -> 使用默认命名空间, 省得每个元素名前面都加上前缀
+     如果是xmlns:前缀=..., 则下面用到相应的标签的名字前面都要加上"前缀:.."
+
+     📌📌targetNamespace: 指定当前的schema文件对应的命名空间所在地址, 其他xml文件要引用此schema时就引用这个属性值. 可以是URL以便多用户访问, 但得先部署到服务器
+ -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.wlowexample.org"
+        elementFormDefault="qualified">
+    <!-- element: 创建对标签的限制. name: 限制标签名; type: 限制标签内容类型 -->
+    <element name="bookshelf">
+        <!-- 📌📌complexType: 元素里面还是元素的话用这个标签 -->
+        <complexType>
+            <sequence maxOccurs="unbounded">
+                <element name="book">
+                    <complexType>
+                        <!-- 📌这里的sequence限制对应xml中标签的顺序严格按照下面声明的顺序, 改为all的话就不限制顺序 -->
+                        <sequence>
+                            <element name="title" type="string"/>
+                            <element name="author" type="string"/>
+                            <element name="price" type="double"/>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>
+

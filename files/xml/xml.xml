@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 根标签一定要有且只能有一个, 比如下面的persons -->
+<persons>
+    <tag>&lt;&gt;&apos;&quot;&amp;</tag>
+    <!-- CDATA标签: 将内容看做纯文本, 可以表示较多的特殊符号, 省得&...;了 -->
+    <tag><![CDATA[<>'"&]]></tag>
+    <person type="student">
+        <id>001</id>
+        <name>张三</name>
+    </person>
+    <person type="teacher">
+        <id>002</id>
+        <name>李老师</name>
+    </person>
+</persons>
+

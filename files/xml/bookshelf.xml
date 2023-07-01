@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<bookshelf xmlns="http://www.wlowexample.org">
+    <book>
+        <title>东方求闻史纪</title>
+        <author>ZUN</author>
+        <price>88.89</price>
+    </book>
+    <book>
+        <title>东方求闻</title>
+        <author>ZUN</author>
+        <price>88.89</price>
+    </book>
+</bookshelf>
+

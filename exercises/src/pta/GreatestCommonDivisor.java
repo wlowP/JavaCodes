@@ -45,7 +45,6 @@ public class GreatestCommonDivisor {
 
     // 辗转相除法(递归版)
     static int gcd2(int a, int b){
-        if (b == 0) return a;
-        return gcd2(b, a % b);
+        return b == 0 ? a : gcd2(b, a % b);
     }
 }

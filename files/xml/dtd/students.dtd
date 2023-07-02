@@ -11,7 +11,10 @@
         多个子标签名用"|"隔开可以起到'或'的效果, 只能出现其中一个
  -->
 <!ELEMENT students (student+)>
-<!ELEMENT student (id, name, age, book*, score+)>
+<!ELEMENT student (id, name, age, book+, score+)>
+    <!ATTLIST student
+            attr CDATA #IMPLIED
+            >
     <!ELEMENT id (#PCDATA)>
     <!ELEMENT name (#PCDATA)>
     <!ELEMENT age (#PCDATA)>
@@ -37,7 +40,7 @@
     <!ELEMENT score (#PCDATA)>
         <!ATTLIST score
             id ID #REQUIRED
-            subject CDATA #IMPLIED
+            subject CDATA #REQUIRED
             mark CDATA #REQUIRED
             pass (合格|不合格|评测中) #REQUIRED
             type CDATA #FIXED "科目成绩"

@@ -23,7 +23,17 @@
         <score id="001" subject="数学" mark="99" pass="合格"/>
         <score id="002" subject="JAVA程序设计" mark="98" pass="合格"/>
     </student>
-    <student>
-        ......
+    <student attr="some_attr">
+        <id>002</id>
+        <name>李四</name>
+        <age>19</age>
+        <book>
+            <title>围城</title>
+            <author>钱钟书</author>
+            <date>1946</date>
+            <price>40</price>
+            <booktag/>
+        </book>
+        <score id="003" mark="95" pass="合格" subject="学术英语"/>
     </student>
 </students>

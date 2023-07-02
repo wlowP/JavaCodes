@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // dom4j解析xml文件
-public class _1_basic {
+public class _1_readXML {
     public static void main(String[] args) throws MalformedURLException, DocumentException {
         // dom4j先基于SAX逐行解析xml, 再创建出document对象
         // 1.创建SAX解析器
@@ -53,6 +53,7 @@ public class _1_basic {
         // 根标签内有各种名字的标签时, 别忘了可以指定名称获取person标签:
         for (Element el : root.elements("person")) {
             list.add(new Person(
+                    // 没有进行非空判断, 要是xml格式不规范的话会出错
                     el.attribute("type").getValue(),
                     el.element("id").getText(),
                     el.element("name").getText()

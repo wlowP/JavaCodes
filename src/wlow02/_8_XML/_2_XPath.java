@@ -1,4 +1,4 @@
-package wlow02._9_XML;
+package wlow02._8_XML;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -51,5 +51,23 @@ public class _2_XPath {
         System.out.println(root.selectNodes("//@id"));
         System.out.println(root.selectSingleNode("//student[@attr]"));
         System.out.println(root.selectSingleNode("//score[@id='002']"));
+
+        // 控制台输出:
+/*      =======
+        钢铁是怎样炼成的
+        钢铁是怎样炼成的
+        朝花夕拾
+        围城
+        =======
+        尼古拉·奥斯特洛夫斯基
+        张三
+        =======
+        [...三个分数标签节点...]
+        [...两个price标签节点...]
+        =======
+        [...三个id属性节点, 📌注意是属性节点不是标签节点...]
+        ...李四标签节点...
+        ...JAVA程序设计标签节点...
+        */
     }
 }

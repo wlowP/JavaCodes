@@ -1,4 +1,4 @@
-package wlow02._8_JVM._2_ClassLoader;
+package wlow02._7_JVM._2_ClassLoader;
 
 import java.io.IOException;
 import java.io.InputStream;

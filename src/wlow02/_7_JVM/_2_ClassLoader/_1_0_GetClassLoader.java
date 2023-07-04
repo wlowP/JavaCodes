@@ -1,4 +1,4 @@
-package wlow02._8_JVM._2_ClassLoader;
+package wlow02._7_JVM._2_ClassLoader;
 
 // 类加载器对象
 public class _1_0_GetClassLoader {

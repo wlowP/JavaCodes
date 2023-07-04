@@ -1,4 +1,4 @@
-package wlow02._7_Proxy._1_Example;
+package wlow02._6_Reflect._3_Proxy._1_Example;
 
 // 把所有需要被代理的方法定义在接口中, 然后让目标类实现接口
 public interface MyProxy {

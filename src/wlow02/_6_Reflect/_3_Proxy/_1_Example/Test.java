@@ -1,4 +1,4 @@
-package wlow02._7_Proxy._1_Example;
+package wlow02._6_Reflect._3_Proxy._1_Example;
 
 // 演示动态代理: 在无侵入式修改(不修改源代码)的情况下给方法补充新功能
 public class Test {

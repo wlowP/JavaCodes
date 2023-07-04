@@ -1,4 +1,4 @@
-package wlow02._8_JVM._1_Logger;
+package wlow02._7_JVM._1_Logger;
 
 // Java也有自带的logger: java.util.logging.Logger 别导错包了
 

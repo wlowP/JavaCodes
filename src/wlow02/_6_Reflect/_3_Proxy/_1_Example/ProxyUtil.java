@@ -1,4 +1,4 @@
-package wlow02._7_Proxy._1_Example;
+package wlow02._6_Reflect._3_Proxy._1_Example;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
@@ -35,12 +35,10 @@ public class ProxyUtil {
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws InvocationTargetException, IllegalAccessException {
                         // 先决定真正调用方法前干些什么事, 也就是要补充哪些新功能
-                        if ("eat".equals(method.getName())){
-                            System.out.println("吃东西前先准备盘子勺子筷子");
-                        } else if ("play".equals(method.getName())) {
-                            System.out.println("玩游戏前先准备好可乐炸鸡翅");
-                        } else if ("activity".equals(method.getName())) {
-                            System.out.println("进行了什么活动要告诉老师家长哦");
+                        switch (method.getName()) {
+                            case "eat" -> System.out.println("吃东西前先准备盘子勺子筷子");
+                            case "play" -> System.out.println("玩游戏前先准备好可乐炸鸡翅");
+                            case "activity" -> System.out.println("进行了什么活动要告诉老师家长哦");
                         }
                         // 然后开始真正调用目标对象的方法, 用方法反射的invoke
                         // 因为方法可能有返回值, 所以直接return

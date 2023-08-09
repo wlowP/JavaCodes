@@ -13,7 +13,7 @@ import java.util.List;
 public class _2_XPath {
     public static void main(String[] args) throws DocumentException {
         SAXReader reader = new SAXReader();
-        Document doc = reader.read(new File("files/xml/students.xml"));
+        Document doc = reader.read(new File("IOPractice/files/xml/students.xml"));
         Element root = doc.getRootElement();
 
         // 主要方法是selectSingleNode和selectNodes, 📌要传递xml中的路径表达式

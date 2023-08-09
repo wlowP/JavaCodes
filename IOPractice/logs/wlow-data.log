@@ -1,0 +1,6 @@
+2023-08-08 18:14:55.563 [main] INFO  wlow02._7_JVM._1_Logger._1_0_Basic - 这是一条日志
+2023-08-08 18:14:55.564 [main] WARN  wlow02._7_JVM._1_Logger._1_0_Basic - 警告
+2023-08-08 18:14:55.564 [main] ERROR wlow02._7_JVM._1_Logger._1_0_Basic - 错误
+2023-08-08 18:15:33.417 [main] INFO  wlow02._7_JVM._1_Logger._1_0_Basic - 这是一条日志
+2023-08-08 18:15:33.418 [main] WARN  wlow02._7_JVM._1_Logger._1_0_Basic - 警告
+2023-08-08 18:15:33.418 [main] ERROR wlow02._7_JVM._1_Logger._1_0_Basic - 错误

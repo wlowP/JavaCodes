@@ -1,6 +1,4 @@
-package wlow02._0_Test;
-
-public class Test_2 {
+class Main {
     public static void main(String[] args) {
 
     }

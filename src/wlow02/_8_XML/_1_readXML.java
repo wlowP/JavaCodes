@@ -19,7 +19,7 @@ public class _1_readXML {
         SAXReader reader = new SAXReader();
         // 2.读取xml文件, 并返回Document对象, 即是xml文件的整体
             // read方法也可以传递字节/字符流对象
-        Document document = reader.read(new File("files/xml/xml.xml"));
+        Document document = reader.read(new File("IOPractice/files/xml/xml.xml"));
 
         // 获取根标签对象
         Element root = document.getRootElement();

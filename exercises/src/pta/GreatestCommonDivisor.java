@@ -31,7 +31,7 @@ public class GreatestCommonDivisor {
         return b;
     }
 
-    // 辗转相除法(自己写的循环版)
+    // 辗转相除法(循环版)
     static int gcd1(int a, int b){
         int remainder = a % b; // 记录余数
         if (remainder == 0) return Math.min(a, b); // a, b刚好整除的情况

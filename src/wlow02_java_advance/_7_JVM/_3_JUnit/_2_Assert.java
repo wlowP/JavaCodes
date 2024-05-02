@@ -1,7 +1,8 @@
 package wlow02_java_advance._7_JVM._3_JUnit;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class _2_Assert {
     @Test
@@ -9,7 +10,7 @@ public class _2_Assert {
         TestClass tc = new TestClass();
         int res = tc.sum(4, 5);
         // System.out.println(res);
-        Assert.assertEquals("出现错误! 结果不符合预期!", 9, res);
+        Assertions.assertEquals(9, res, "出现错误! 结果不符合预期!");
     }
 }
 

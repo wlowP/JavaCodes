@@ -1,5 +1,8 @@
 package wlow03_datastruct_algorithm.datastruct;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.function.BiConsumer;
@@ -13,7 +16,9 @@ import java.util.stream.IntStream;
  *  - 增删: 头部: O(n); 中间: O(n); 尾部: O(1) (跟扩容的情况均摊来说)
  */
 public class _1_0_DynamicArray {
-    public static void main(String[] args) {
+    @Test
+    @DisplayName("一维动态数组")
+    public void DynamicArray() {
         DynamicArray arr = new DynamicArray();
 
         arr.add(2);arr.add(1);arr.add(4);arr.add(8);arr.add(6);

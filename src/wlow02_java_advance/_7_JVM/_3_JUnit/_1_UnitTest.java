@@ -1,6 +1,6 @@
 package wlow02_java_advance._7_JVM._3_JUnit;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 // 单元测试
 public class _1_UnitTest {

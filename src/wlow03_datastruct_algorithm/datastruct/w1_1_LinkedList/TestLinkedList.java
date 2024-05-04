@@ -82,5 +82,46 @@ public class TestLinkedList {
         list.add(5, 9);
         list.add(2, 8);
         System.out.println(list);
+        list.remove(3);
+        System.out.println(list);
+        System.out.println(list.get(5));
+    }
+
+    @Test
+    @DisplayName("带哨兵节点的双向环形链表")
+    public void doublyLinkedListSentinelCircular() {
+        DoublyLinkedListSentinelCircular list = new DoublyLinkedListSentinelCircular();
+        list.addFirst(2);
+        list.addFirst(1);
+        list.add(3);
+        list.add(4);
+
+        System.out.println(list);
+
+        list.removeLast();
+        list.removeFirst();
+
+        System.out.println(list);
+
+        list.addFirst(1);
+        list.add(4);
+
+        System.out.println(list);
+        list.remove(0);
+        System.out.println(list);
+
+        list.add(3, 5);
+        list.add(3);
+        System.out.println(list);
+
+        list.remove(Integer.valueOf(3));
+        System.out.println(list);
+        list.remove(Integer.valueOf(3));
+        System.out.println(list);
+        // list.foreach(System.out::println);
+        // list.stream().forEach(System.out::println);
+        // for (Integer i : list) {
+        //     System.out.println(i);
+        // }
     }
 }

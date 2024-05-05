@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
  */
 public class TestLinkedList {
     @Test
-    @DisplayName("普通单向链表")
+    @DisplayName("1.普通单向链表")
     public void singlyLinkedList() {
         SinglyLinkedList list = new SinglyLinkedList();
 
@@ -42,7 +42,7 @@ public class TestLinkedList {
     }
 
     @Test
-    @DisplayName("带哨兵节点的单向链表")
+    @DisplayName("2.带哨兵节点的单向链表")
     public void singlyLinkedListSentinel() {
         SinglyLinkedListSentinel list = new SinglyLinkedListSentinel();
 
@@ -71,7 +71,7 @@ public class TestLinkedList {
     }
 
     @Test
-    @DisplayName("头尾带哨兵节点的双向链表")
+    @DisplayName("3.头尾带哨兵节点的双向链表")
     public void doublyLinkedListSentinel() {
         DoublyLinkedListSentinel list = new DoublyLinkedListSentinel();
         list.add(1);
@@ -88,7 +88,7 @@ public class TestLinkedList {
     }
 
     @Test
-    @DisplayName("带哨兵节点的双向环形链表")
+    @DisplayName("4.带哨兵节点的双向环形链表")
     public void doublyLinkedListSentinelCircular() {
         DoublyLinkedListSentinelCircular list = new DoublyLinkedListSentinelCircular();
         list.addFirst(2);
@@ -123,5 +123,14 @@ public class TestLinkedList {
         // for (Integer i : list) {
         //     System.out.println(i);
         // }
+
+        System.out.println("递归遍历方式");
+        list.foreachRecursive(System.out::println);
+
+        System.out.println("进递归前和进递归后, 分别是正序遍历和倒序遍历");
+        list.foreachRecursive(
+                n -> System.out.println("before: " + n),
+                n -> System.out.println("after: " + n)
+        );
     }
 }

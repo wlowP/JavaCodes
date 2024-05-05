@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
  */
 public class TestDynamicArray {
     @Test
-    @DisplayName("一维动态数组")
+    @DisplayName("1.一维动态数组")
     public void DynamicArray() {
         DynamicArray arr = new DynamicArray();
 

@@ -226,4 +226,34 @@ public class DoublyLinkedListSentinelCircular implements Iterable<Integer> {
         }
         return builder.build();
     }
+
+    /**
+     * <h2>遍历方式4 - 递归遍历</h2>
+     * @param consumer 遍历时要对每个元素进行的操作
+     */
+    public void foreachRecursive(Consumer<Integer> consumer) {
+        recursion(sentinel.next, consumer);
+    }
+
+    private void recursion(Node cur, Consumer<Integer> consumer) {
+        if (cur == sentinel) {
+            return;
+        }
+        // 下面两行顺序调换的话, 就会变成倒序遍历
+        consumer.accept(cur.value);
+        recursion(cur.next, consumer);
+    }
+
+    public void foreachRecursive(Consumer<Integer> before, Consumer<Integer> after) {
+        recursion(sentinel.next, before, after);
+    }
+
+    private void recursion(Node cur, Consumer<Integer> before, Consumer<Integer> after) {
+        if (cur == sentinel) {
+            return;
+        }
+        before.accept(cur.value);
+        recursion(cur.next, before, after);
+        after.accept(cur.value);
+    }
 }

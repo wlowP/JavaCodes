@@ -1,11 +1,11 @@
-package wlow03_datastruct_algorithm.algorithm;
+package wlow03_datastruct_algorithm.algorithm.w0_0_BinarySearch;
 
-/*
-* 二分查找及其各种优化
-* - 时间复杂度: O(log(n))
-* - 空间复杂度: O(1)
-* */
-public class _0_0_BinarySearch {
+/**
+ * 二分查找及其各种优化 <br>
+ * - 时间复杂度: O(log(n)) <br>
+ * - 空间复杂度: O(1)
+ */
+public class BinarySearch {
     public static void main(String[] args) {
         int[] arr = {1, 2, 4, 7, 9, 11, 17, 23, 50, 68, 89, 102};
         int[] arrDuplicated = {1, 2, 4, 7, 9, 9, 9, 11, 17, 23, 50, 68, 68, 68, 89, 102};
@@ -193,9 +193,9 @@ public class _0_0_BinarySearch {
 
 
     /**
-     * leftmost和rightmost的结合版本. 传入参数lower决定使用哪种
-     *  - lower = true -> leftmost; false -> rightmost
-     *  -- lower为true时跟 {@link #binarySearchLeftMost(int[], int)} 基本一样, 只是index = m这一步会多执行几次
+     * leftmost和rightmost的结合版本. 传入参数lower决定使用哪种 <br>
+     *  - lower = true -> leftmost; false -> rightmost <br>
+     *  -- lower为true时跟 {@link #binarySearchLeftMost(int[], int)} 基本一样, 只是index = m这一步会多执行几次 <br>
      *  -- lower为false时与 {@link #binarySearchRightMost(int[], int)} 有区别, 区别就是index是从右往左逼近目标的.
      */
     public int binarySearchLR(int[] arr, int n, boolean lower) {
